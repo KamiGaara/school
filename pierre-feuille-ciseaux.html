@@ -135,50 +135,54 @@ if (ResultatJeux[0] != 'rien' && ResultatJeux[1] != 'rien') { // si la première
 		}
 		
 		if (ResultatJeux[0] === 'ciseau' && ResultatJeux[1] === 'feuille') { //si la première valeur du tableau ResultatJeux est égale à 'ciseau' et si la deuxième valeur de ce même tableau est égale à feuille alors on execute le code suivant
- 		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille"; // On fait savoir que le ciseau gagne en écritant le texte suivant dans la div "titre"
+ 		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille"; // On fait savoir que le ciseau gagne en écrivant le texte suivant dans la div "titre"
 		document.getElementById("gauche").style.backgroundColor="green"; // On assigne un arrière-plan de couleur vert à la div "gauche", comme il a gagné
 		document.getElementById("droite").style.backgroundColor="red"; // On assigne un arrière-plan de couleur rouge à la div "droite" comme il a perdu
 		document.getElementById("resultat-gauche").innerHTML="Gagné"; // On écrit "gagné" dans resultat-gauche comme le ciseau l'emporte
 		document.getElementById("resultat-droite").innerHTML="Perdu"; // On écrit "perdu" dans resultat-droit comme la feuille est plus faible
 		}
 		
-		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'pierre') { 
-		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre";
-		document.getElementById("gauche").style.backgroundColor="green";
-		document.getElementById("droite").style.backgroundColor="red";
-		document.getElementById("resultat-gauche").innerHTML="Gagné";
-		document.getElementById("resultat-droite").innerHTML="Perdu";
+		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'pierre') { //si la première valeur du tableau ResultatJeux est égale à 'feuille' et si la deuxième valeur de ce même tableau est égale à 'pierre' alors on execute le code ci dessous
+		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre"; // On fait savoir que la feuille gagne en écrivant la valeur suivante dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="green"; // On assigne un arrière-plan de couleur vert à la div "gauche", comme il a gagné
+		document.getElementById("droite").style.backgroundColor="red"; // On assigne un arrière-plan de couleur rouge à la div "droite", comme il a perdu
+		document.getElementById("resultat-gauche").innerHTML="Gagné"; // On écrit "gagné" dans resultat-gauche comme la feuille l'emporte
+		document.getElementById("resultat-droite").innerHTML="Perdu"; // On écrit "perdu" dans resultat-droit comme la pierre a perdu
+
 		}
 		
-		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'ciseau') {
-		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille";
-		document.getElementById("gauche").style.backgroundColor="red";
-		document.getElementById("droite").style.backgroundColor="green";
-		document.getElementById("resultat-gauche").innerHTML="Perdu";
-		document.getElementById("resultat-droite").innerHTML="Gagné";
+		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'ciseau') { // si la premiere valeur du tableau ResultatJeux est égale à 'feuille' et si la deuxième valeur de ce même tableau est égale à 'ciseau' alors on on execute le code suivant
+		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille"; // On fait savoir que le ciseau gagne en écrivant la valeur suivante dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="red"; // Comme le ciseau l'emporte on assigne donc un arrière-plan rouge à la div "gauche"
+		document.getElementById("droite").style.backgroundColor="green";// Comme le ciseau l'emporte on assigne donc un arrière-plan rouge à la div "droite"
+		document.getElementById("resultat-gauche").innerHTML="Perdu";// On écrit "perdu" dans "resultat-gauche" comme le ciseau l'emporte
+		document.getElementById("resultat-droite").innerHTML="Gagné"; // On écrit "gagné" dans "resultat-droite" comme la feuille à perdu
 		}
 		
-		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'feuille') {
-		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre";
-		document.getElementById("gauche").style.backgroundColor="red";
-		document.getElementById("droite").style.backgroundColor="green";
-		document.getElementById("resultat-gauche").innerHTML="Perdu";
-		document.getElementById("resultat-droite").innerHTML="Gagné";
+		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'feuille') {// si la premiere valeur du tableau ResultatJeux est égale à 'pierre' et si la deuxième valeur de ce même tableau est égale à 'feuille' alors on execute
+		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre"; // On fait savoir que la feuille gagne comparé à la pierre, en écrivant la valeur suivante dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="red"; //Comme la feuille l'emporte on assigne donc un arrière-plan rouge à la div "gauche"
+		document.getElementById("droite").style.backgroundColor="green"; // Comme la feuille l'emporte on assigne donc un arrière-plan vert à la div "droite"
+		document.getElementById("resultat-gauche").innerHTML="Perdu"; // On écrit "perdu" dans "resultat-gauche" comme la feuille l'emporte
+		document.getElementById("resultat-droite").innerHTML="Gagné"; // On écrit "gagné" dans "resultat-droite" comme la feuille l'emporte
 		}
 		
-		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'ciseau') {
-		document.getElementById("titre").innerHTML="La pierre défonce le ciseau";
-		document.getElementById("gauche").style.backgroundColor="green";
-		document.getElementById("droite").style.backgroundColor="red";
-		document.getElementById("resultat-gauche").innerHTML="Gagné";
-		document.getElementById("resultat-droite").innerHTML="Perdu";
+		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'ciseau') { // si la première valeur du tableau ResultatJeux est égale à 'pierre' et si la deuxième valeur de ce même tableau est égale à 'ciseau' alors on éxecute le code ci-dissous
+		document.getElementById("titre").innerHTML="La pierre défonce le ciseau"; // On fait savoir que la pierre gagne contre le ciseau en écrivant la valeur suivante dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="green"; //Comme la pierre contre le ciseau on assigne un arrière-plan vert à la div "gauche"
+		document.getElementById("droite").style.backgroundColor="red"; // Comme le ciseau perd contre la pierre on assigne un arrière-plan rouge à la div "droite"
+		document.getElementById("resultat-gauche").innerHTML="Gagné"; // On écrit gagné dans "resultat-gauche" comme la pierre l'emporte
+		document.getElementById("resultat-droite").innerHTML="Perdu"; //On écrit perdu dans "resultat-droite" comme la pierre l'emporte
 		}
 		
-	document.getElementById("rejouer").style.display="initial";
+	document.getElementById("rejouer").style.display="initial"; // Une fois le code executé on reinitialise la balise rejouer comme comme elle était
 	}
 	;}, 1000);
+	//fin d'execution du script
 }
-
+// fin du script
 </script>
+<!-- fermeture du corps de la page -->
 </body>
-</html>
+
+</html> <!-- fermeture de la page HTML -->
