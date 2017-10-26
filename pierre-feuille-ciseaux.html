@@ -1,0 +1,184 @@
+<!-- J'ai fait ça à 4h du matin, je suis désolé si y a des fautes -->
+
+<!doctype html> <!-- Déclaration du type de document -->
+<html><!-- Début de notre page HTML -->
+<head><!-- Début de la "tête" de notre page --> 
+<meta charset="utf-8"><!-- Encodage de la page-->
+<title>Pierre feuille ciseau</title> <!-- Titre de la page -->
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'> <!-- Import de notre police externe -->
+<!-- Début du style de notre page -->
+<style>
+body {
+	margin:0;
+	padding: 0;
+	}
+#titre {
+	position:fixed;
+	left:0px;
+	top:0px;
+	text-align:center;
+	width:100%;
+	display:block;
+	font-family: 'Lobster', cursive;
+	font-size:50px;
+	padding:20px;
+	color:white;
+	background-color:black;
+	}
+#gauche, #droite {
+	float:left;
+	width:50%;
+	background-color:#C3C2C2;
+	min-height: 100vh;
+	text-align:center;
+	}
+#resultat-gauche, #resultat-droite {
+	text-align:center;
+	margin-top:100px;
+	font-family: 'Lobster', cursive;
+	font-size:70px;
+	color:white;
+	text-transform: capitalize;
+	}
+#image-gauche, #image-droite {
+	text-align:center;
+	height:300px;
+	background-image:url(images-pfc/depart.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size: 300px 300px; 
+	}
+#rejouer {
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	text-align:center;
+	width:100%;
+	display:block;
+	}
+.bouton {
+	margin-bottom:20px;
+	padding:20px;
+	font-family: 'Lobster', cursive;
+	font-size:60px;
+	background-color:#C3C2C2;
+	border-radius:20px;
+	border:none;
+	}
+</style><!-- Fin du style de la page -->
+
+</head> <!-- Fin de la tête -->
+
+<body onload="Initialisation();"> <!-- Début du corps de notre page avec comme attribut onload qui signifie "au chargement". La fonction Initialisation sera donc éxecutée au chargement de notre page HTML -->
+<div id="titre">Chifoumi</div><!-- Déclaration de la div "titre" qui contient "Chifoumi" -->
+<div id="gauche"> <!-- Déclaration de la div gauche, qui part la suite sera affichée à gauche de la page grâce au CSS -->
+	<div id="resultat-gauche">Gagné</div> <!-- Ouverture et fermeture de la div resultat, le resultat changera suivant le résultat obtenue grace à la fonction checkGame() -->
+    <div id="image-gauche" onclick="joueurGauche();"></div> <!-- Quand le joeur clique sur cette div, la fonction joeurGauche est appelée et génère donc un résultat aléatoire -->
+</div><!-- Fermeture de la div "gauche" -->
+<div id="droite"><!-- Déclaration de la div droite, qui part la suite sera affichée à droite de la page grâce au CSS -->
+	<div id="resultat-droite">Perdu</div> <!-- Ouverture et fermeture de la div resultat, le resultat changera suivant le résultat obtenue grace à la fonction checkGame() -->
+    <div id="image-droite" onclick="joueurDroite();"></div><!-- Quand le joeur clique sur cette div, la fonction joeurDroite est appelée et génère donc un résultat aléatoire -->
+</div><!-- fermeture de la div "droite" -->
+<div id="rejouer"> <button type="button" class="bouton" onclick="Initialisation();"> Rejouer </button> </div> <!-- div qui contient un bouton, à chaque fois que l'utilisateur presse le bouton la fonction "Initialisation" est appelée -->
+<!-- début de notre javascript -->
+<script>
+// Début de la fonction Initialisation qui est appelée à la fois dans le body et dans le bouton "Rejouer"
+function Initialisation() {
+   document.getElementById("rejouer").style.display="none"; //Ici, on récupère la div "rejouer" et la rend invisible
+   document.getElementById("resultat-gauche").innerHTML="&nbsp;"; //Ici, on écrit directement dans la div "resultat-gauche" et on lui donne un "espace" comme valeur
+   document.getElementById("resultat-droite").innerHTML="&nbsp;"; //Ici, on fait exactement la même chose que pour resultat-gauche, mais dans la div resultat-droit
+   ResultatJeux = ["rien", "rien"]; // Déclaration de la variable ResultatJeux, qui est donc un tableau avec comme valeur 'rien' et 'rien'
+   chifoumi = ["pierre", "ciseau", "feuille"];  // Déclaration de la variable chifoumi, qui est donc un tableau et qui a pour valeur 'pierre', 'ciseau', 'feuille' 
+   document.getElementById('image-gauche').style.pointerEvents = 'auto'; // Ici on ajoute un évenement de pointage à la div image-gauche
+   document.getElementById('image-droite').style.pointerEvents = 'auto'; // Même chose que pour image-gauche mais pour image droite
+   document.getElementById("gauche").style.backgroundColor=document.getElementById("droite").style.backgroundColor="#C3C2C2"; // Ici on récupère deux div et on leur définit le même arrière plan,qui est gris pour le coup
+   document.getElementById("titre").innerHTML="Chifoumi"; // ici on écrit directement dans la div "titre" 
+   document.getElementById("image-gauche").style.backgroundImage=document.getElementById("image-droite").style.backgroundImage="url(images-pfc/depart.jpg)"; // Récuperation de deux divs, pour ensuite leur assigner le même arrière plan
+}
+// début de la fonction joueurGauche qui est appelée dans la div "image-gauche"
+function joueurGauche() {
+var ChoixAleatoire = Math.floor(Math.random()*chifoumi.length); // ici on genere un resultat aléatoire depuis la variable chifoumi, à savoir que le resultat peut-être soit 1,2 ou 3
+ResultatJeux[0]=chifoumi[ChoixAleatoire]; // ici on dit que la première valeur dans le tableau ResulatJeux sera remplacée par la valeur génerée dans la variable ChoixAléatoire
+document.getElementById("image-gauche").style.backgroundImage="url(images-pfc/"+chifoumi[ChoixAleatoire]+".jpg)"; // 
+document.getElementById("gauche").style.backgroundColor="black";// définition d'un arrière plan de couleur noir pour la div "gauche"
+document.getElementById("resultat-gauche").innerHTML=chifoumi[ChoixAleatoire]; // On récupère la div "resultat-gauche" et on écrit le résultat obtenu, dans cette div
+document.getElementById('image-gauche').style.pointerEvents = 'none'; // ajout d'un évenement de pointage à la div image-gauche
+checkGame(); // ici on appel la fonction checkGame();
+}
+//début de la fonction joueurDroite qui est par la suite appelée dans la div "image-droite"
+function joueurDroite() {
+var ChoixAleatoire = Math.floor(Math.random()*chifoumi.length);// ici on genere un resultat aléatoire depuis la variable chifoumi, à savoir que le resultat peut-être soit 1,2 ou 3
+ResultatJeux[1]=chifoumi[ChoixAleatoire]; // ici on dit que la deuxieme valeur dans le tableau ResulatJeux sera remplacée par la valeur génerée dans la variable ChoixAléatoire
+document.getElementById("image-droite").style.backgroundImage="url(images-pfc/"+chifoumi[ChoixAleatoire]+".jpg)"; // L'arrière plan sera generé suivant chifoumi, à savoir 1 2 ou 3
+document.getElementById("droite").style.backgroundColor="black"; // on attribut un arrière-plan noir à la div "droite"
+document.getElementById("resultat-droite").innerHTML=chifoumi[ChoixAleatoire]; // ici on écrit le resultat que l'on a obtenu aléatoirement avec chifoumi dans la div "resultat droite"
+document.getElementById('image-droite').style.pointerEvents = 'none'; // on enlève l'evenement de pointage de la div "image-droite"
+checkGame();
+ 
+}
+// début de la fonction checkGame qui appelée dans joueurDroite
+function checkGame() {
+	setTimeout(function () { // setTimeout execute le code pendant un certain temps, dans ce cas  seconde
+if (ResultatJeux[0] != 'rien' && ResultatJeux[1] != 'rien') { // si la première et deuxième valeur du tableau  "ResultatJeux" n'est pas égale à 'rien' alors on execute le code en dessous
+	
+	if (ResultatJeux[0] === ResultatJeux[1]) { // si la premiere et deuxième valeur du tableau "ResultatJeux" sont égales alors on execute le code qui suit
+		document.getElementById("titre").innerHTML="Egalité, ça craint !!"; // Comme, les deux valeurs sont les mêmes ont écrit donc "Égalité" dans la div titre
+		document.getElementById("droite").style.backgroundColor=document.getElementById("gauche").style.backgroundColor="red"; // on assigne le même arrière-plan à la div gauche et droite, à savoir rouge
+		}
+		
+		if (ResultatJeux[0] === 'ciseau' && ResultatJeux[1] === 'pierre') { // si la première valeur du tableau ResultatJeux est égale à "ciseau" et si la deuxième valeur de ce même tableau est égale à 'pierre' alors on execute le code en dessous
+		document.getElementById("titre").innerHTML="La pierre défonce le ciseau"; // Ici on fait bien savoir que le ciseau vaut rien contre la pierre, donc écrit le texte suivant dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="red"; // On assigne un arrière plan rouge à la div "gauche" comme il a perdu
+		document.getElementById("droite").style.backgroundColor="green"; // On assigne un arrière plan vert à la div "droite" comme il a gagné
+		document.getElementById("resultat-gauche").innerHTML="Perdu"; // On écrit "perdu" dans resultat-gauche comme le ciseau est plus faible que la pierre
+		document.getElementById("resultat-droite").innerHTML="Gagné"; //On écrit "gagné" dans resultat-droit comme la pierre l'emporte 
+		}
+		
+		if (ResultatJeux[0] === 'ciseau' && ResultatJeux[1] === 'feuille') { //si la première valeur du tableau ResultatJeux est égale à 'ciseau' et si la deuxième valeur de ce même tableau est égale à feuille alors on execute le code suivant
+ 		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille"; // On fait savoir que le ciseau gagne en écritant le texte suivant dans la div "titre"
+		document.getElementById("gauche").style.backgroundColor="green"; // On assigne un arrière-plan de couleur vert à la div "gauche", comme il a gagné
+		document.getElementById("droite").style.backgroundColor="red"; // On assigne un arrière-plan de couleur rouge à la div "droite" comme il a perdu
+		document.getElementById("resultat-gauche").innerHTML="Gagné"; // On écrit "gagné" dans resultat-gauche comme le ciseau l'emporte
+		document.getElementById("resultat-droite").innerHTML="Perdu"; // On écrit "perdu" dans resultat-droit comme la feuille est plus faible
+		}
+		
+		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'pierre') { 
+		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre";
+		document.getElementById("gauche").style.backgroundColor="green";
+		document.getElementById("droite").style.backgroundColor="red";
+		document.getElementById("resultat-gauche").innerHTML="Gagné";
+		document.getElementById("resultat-droite").innerHTML="Perdu";
+		}
+		
+		if (ResultatJeux[0] === 'feuille' && ResultatJeux[1] === 'ciseau') {
+		document.getElementById("titre").innerHTML="Le ciseau coupe la feuille";
+		document.getElementById("gauche").style.backgroundColor="red";
+		document.getElementById("droite").style.backgroundColor="green";
+		document.getElementById("resultat-gauche").innerHTML="Perdu";
+		document.getElementById("resultat-droite").innerHTML="Gagné";
+		}
+		
+		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'feuille') {
+		document.getElementById("titre").innerHTML="La feuille enveloppe la pierre";
+		document.getElementById("gauche").style.backgroundColor="red";
+		document.getElementById("droite").style.backgroundColor="green";
+		document.getElementById("resultat-gauche").innerHTML="Perdu";
+		document.getElementById("resultat-droite").innerHTML="Gagné";
+		}
+		
+		if (ResultatJeux[0] === 'pierre' && ResultatJeux[1] === 'ciseau') {
+		document.getElementById("titre").innerHTML="La pierre défonce le ciseau";
+		document.getElementById("gauche").style.backgroundColor="green";
+		document.getElementById("droite").style.backgroundColor="red";
+		document.getElementById("resultat-gauche").innerHTML="Gagné";
+		document.getElementById("resultat-droite").innerHTML="Perdu";
+		}
+		
+	document.getElementById("rejouer").style.display="initial";
+	}
+	;}, 1000);
+}
+
+</script>
+</body>
+</html>
