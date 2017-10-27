@@ -8,121 +8,161 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: #D499B1;
+    background-image: url("http://www.v3wall.com/wallpaper/1920_1080/1201/1920_1080_20120107123645689955.jpg");
+    background-position: center;
+    background-size: cover; 
+    
+
 }
+img{
+    width: 150px;
+}
+p{
+    color: #fff;
+}
+h2{
+    color: #DA8C9C;
+}
+h3{
+    color: #DA8C9C;
+}
+
+#name{
+    text-decoration: underline;
+}
+a, strong{
+    color: #7F2E1B;
+}
+
 header{
     width: 900px;
     margin: auto;
-    height: 30vh;
+    padding-top: 20px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background-color: #000;
+    
     
 }
+
 header img{
-    float: left;
-    width: 180px;
-    border-radius: 50%;
+    
 }
+#icon{
+    position: relative;
+    left: 0;
+    width: 150px;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out;
+
+
+}
+#icon:hover{
+    
+}
+
 header .intro{
     float: right;
-    margin-top: 8vh;
-    text-align: center;
+    padding-top: 5%;
+    
 
 }
-a{
-    font-family: 'Montserrat', sans-serif;
+.lol{
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background-color: #000;
+    color: #fff;
 }
-header .intro ul{
-    font-size: 0.8m;
-
-}
-header .intro a{
-    text-decoration: none;
-    font-weight: 900;
-    color: #FF0302;
-}
-hr {
+.separator{
     width: 900px;
-    margin: auto;
+    height: 50px;
+    
 }
+
 main{
+    
     width: 900px;
     margin: auto;
-    height: 20vh;
+    height: 400px;
     
 }
+
 main p{
-    margin: 10px;
-}
+    padding: 10px;
 
-.formation{
-    width: 50%;
-    padding-top: 80px;
-    float: left;
+}   
+ul,li {
+    list-style: none;
+    color: #fff;
     
-    padding-bottom: 80px;
-
+}
+ul{
+    padding-top: 12px;
+    
 }
 
-.formation img{
-    width: 150px;
-    padding-top: 30px;
-    display: block;
-    margin: auto;
+#formation-title{
+    position: absolute;
+    left: 55%;
 }
-.formation h3{
-    text-align: center;
-    font-size: 1.6em;
+.formation{
+    position: absolute;
+    left: 55%;
+    width: 300px;
+    padding-top: 40px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding-bottom: 40px;
+    background-color: #000;
+    height: 100px;
+    
 }
 
 .experience{
-    float: right;
-    width: 50%;
-    margin: auto;
-    padding-top: 80px;
-    
-    padding-bottom: 80px;
-}
-.experience img{
-    width: 150px;
-    padding-top: 30px;
-    display: block;
-    margin: auto;
-}
-.experience h3{
-    text-align: center;
-    font-size: 1.6em;
-}
-
-ul,li{
-    list-style: none;
-    width: 10vw;
-    margin: auto;
-    padding-left: 0.8vw;
-    font-size: 1em;
-}
-footer{
-    width: 900px;
-    margin: auto;
+    position: absolute;
+    width: 300px;
+    left: 23%;
+    padding-top: 40px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    padding-bottom: 40px;
+    background-color: #000;
+    height: 100px;  
     
 }
-
-.interests h3{
-    text-align: center;
-}
-
-footer{
-    padding-top: 10px;
+#experience-title{
+    position: absolute;
+    left: 23%;
     padding-bottom: 20px;
 }
-h2{
-    color: #000;
-}
-h3{
-    color: #333;
+
+
+
+footer{
+    background-image: url("https://orig00.deviantart.net/bd2c/f/2012/239/b/e/be00740d710c29153e9310c911f41423-d5ckqws.png");
+    background-size: cover;
+    width: 900px;
+    margin: auto;
+    padding-bottom: 40px;
+    height: 315px;
+    border: 2px solid #fff;
+    border-radius: 6px;
 }
 
-p{
-    color: #3d3d3d;
+footer p{
+    padding: 10px;
 }
-
-strong{
-    color: rgb(63, 7, 7);
+#interest-title{
+    width: 900px;
+    margin: auto;
+}
+.interests{
+    position: relative;
+    top: 70%;
+    float: right;
+    margin-right: 33%;
+    color: #A14245;
+    font-weight: 900;
 }
