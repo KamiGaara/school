@@ -26,6 +26,13 @@ header .intro{
     text-align: center;
 
 }
+a{
+    font-family: 'Montserrat', sans-serif;
+}
+header .intro ul{
+    font-size: 0.8m;
+
+}
 header .intro a{
     text-decoration: none;
     font-weight: 900;
@@ -57,6 +64,8 @@ main p{
 .formation img{
     width: 150px;
     padding-top: 30px;
+    display: block;
+    margin: auto;
 }
 .formation h3{
     text-align: center;
@@ -74,7 +83,7 @@ main p{
 .experience img{
     width: 150px;
     padding-top: 30px;
-    display: inline-block;
+    display: block;
     margin: auto;
 }
 .experience h3{
