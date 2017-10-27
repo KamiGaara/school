@@ -9,7 +9,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #D499B1;
-    background-image: url("http://www.v3wall.com/wallpaper/1920_1080/1201/1920_1080_20120107123645689955.jpg");
+    background-image: url("1920_1080_20120107123645689955.jpg");
     background-position: center;
     background-size: cover; 
     
@@ -141,7 +141,7 @@ ul{
 
 
 footer{
-    background-image: url("https://orig00.deviantart.net/bd2c/f/2012/239/b/e/be00740d710c29153e9310c911f41423-d5ckqws.png");
+    background-image: url("test.png");
     background-size: cover;
     width: 900px;
     margin: auto;
