@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+margin: 0;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	color:lightBlue;
+	text-decoration: underline;
+	text-decoration-color: blue;
+}
+
+body {
+    width: 900px;
+    border: 2px solid black;
+    padding: 25px;
+    margin: 25px;
+    background-image: url("arriere-plan.jpg");
+}
+
+#icone{
+    position: relative;
+    left: 0;
+    bottom: 25px;
+    width: 150px;
+    border-radius: 50%;
+    }
+
+ul#liste{
+	color: red;
+}
+
+a {
+	color: orange;
+}
+
+a:focus {
+	background-color: grey;
+}
+
+#gif{
+position: relative;
+left: 650px;
+bottom: 100px;
+
+}
+
+ul#liste a {
+position: relative;
+left: 10px;
+
+}
